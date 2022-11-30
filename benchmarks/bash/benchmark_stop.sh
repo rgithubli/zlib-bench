@@ -31,6 +31,11 @@ echo 4200000 > /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq
 # switch off DPMS
 xset +dpms
 
+# TODO: need to reset for docker: /sys/fs/cgroup/cpuset/docker/cpuset.cpus
+# $ cat /sys/fs/cgroup/cpuset/docker/cpuset.cpus 
+# 0-7
+
+
 # provide some advice on how to use cset
 echo "Now reset your dedicated CPU set:"
 echo

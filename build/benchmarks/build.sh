@@ -1,4 +1,6 @@
 #!/bin/bash
+set -xe
+
 MYDIR=`dirname $0`
 pushd $MYDIR
 CC=${CC:-gcc}
