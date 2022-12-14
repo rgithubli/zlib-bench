@@ -138,16 +138,16 @@ public class CreateVegaLiteGraph {
         }
         StringJoiner default_data = new StringJoiner(",\n");
         String pattern = ".+\"level\": \"([0-9]+)\".+\"type\": \"" +
-            default_impl + "\".+\"throughput\": \"(.+)\".+\"file\": \"(.+)\".+";
+                default_impl + "\".+\"throughput\": \"(.+)\".+\"file\": \"(.+)\".+";
         Scanner default_scanner = new Scanner(data);
         final String level = default_level;
         default_scanner.findAll(pattern).
-            filter(r -> level.equals(r.group(1))).
-            map(r -> List.of(r.group(1), r.group(2), r.group(3))).
-            collect(Collectors.groupingBy(l -> l.get(2), Collectors.averagingDouble(m -> Double.parseDouble(m.get(1))))).
-            entrySet().
-            stream().
-            forEach(e -> default_data.add("{\"file\": \"" + e.getKey() + "\", \"default_val\": \"" + e.getValue() + "\"}"));
+                filter(r -> level.equals(r.group(1))).
+                map(r -> List.of(r.group(1), r.group(2), r.group(3))).
+                collect(Collectors.groupingBy(l -> l.get(2), Collectors.averagingDouble(m -> Double.parseDouble(m.get(1))))).
+                entrySet().
+                stream().
+                forEach(e -> default_data.add("{\"file\": \"" + e.getKey() + "\", \"default_val\": \"" + e.getValue() + "\"}"));
 
         // Get the different data files
         StringJoiner file_sort = new StringJoiner(", ");
@@ -176,18 +176,21 @@ public class CreateVegaLiteGraph {
         json_file.close();
 
         if (svg_file_name != null) {
-            ProcessBuilder vl2vg = new ProcessBuilder("vl2vg");
-            vl2vg.redirectInput(new File(json_file_name));
-            ProcessBuilder vg2svg = new ProcessBuilder("vg2svg", "-s", "2");
+            // ProcessBuilder vl2vg = new ProcessBuilder("vl2vg");
+            // vl2vg.redirectInput(new File(json_file_name));
+            ProcessBuilder vg2svg = new ProcessBuilder("vl2svg", "-s", "2", json_file_name);
+            //ProcessBuilder vg2svg = new ProcessBuilder("vg2svg", "-s", "2");
             vg2svg.redirectOutput(new File(svg_file_name));
-            ProcessBuilder.startPipeline(List.of(vl2vg, vg2svg));
+            ProcessBuilder.startPipeline(List.of(vg2svg));
         }
         if (png_file_name != null) {
-            ProcessBuilder vl2vg = new ProcessBuilder("vl2vg");
-            vl2vg.redirectInput(new File(json_file_name));
-            ProcessBuilder vg2png = new ProcessBuilder("vg2png", "-s", "2");
+//            ProcessBuilder vl2vg = new ProcessBuilder("vl2vg");
+//            vl2vg.redirectInput(new File(json_file_name));
+            ProcessBuilder vg2png = new ProcessBuilder("vl2png", "-s", "2", json_file_name);
             vg2png.redirectOutput(new File(png_file_name));
-            ProcessBuilder.startPipeline(List.of(vl2vg, vg2png));
+            ProcessBuilder.startPipeline(List.of(vg2png));
         }
     }
 }
+
+
