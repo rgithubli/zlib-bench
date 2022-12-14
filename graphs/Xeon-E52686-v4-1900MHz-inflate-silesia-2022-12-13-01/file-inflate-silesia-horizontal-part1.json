@@ -1,0 +1,153 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "title": {
+    "text" : "Inflater throughput for Silesia corpus (part1) at compression level 6 on Xeon E5-2686 v4 / 1900MHz",
+    "anchor": "middle",
+    "offset": 20
+  },
+  "data": {
+    "values" : [
+        {"level": "6", "type": "ristretto19-bundled", "ratio": "6.22", "throughput": "40.11", "file": "dickens"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "6.22", "throughput": "41.08", "file": "dickens"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "6.22", "throughput": "49.65", "file": "dickens"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "6.22", "throughput": "49.57", "file": "dickens"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "6.22", "throughput": "51.55", "file": "dickens"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "2.63", "throughput": "43.08", "file": "dickens"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "2.63", "throughput": "36.68", "file": "dickens"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "2.63", "throughput": "36.82", "file": "dickens"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "2.63", "throughput": "39.49", "file": "dickens"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "2.63", "throughput": "42.14", "file": "dickens"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "1.99", "throughput": "40.46", "file": "ooffice"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "1.99", "throughput": "38.04", "file": "ooffice"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "1.99", "throughput": "33.73", "file": "ooffice"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "1.99", "throughput": "40.28", "file": "ooffice"},
+{"level": "6", "type": "ristretto19-cloudflare", "ratio": "1.99", "throughput": "40.20", "file": "ooffice"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "2.73", "throughput": "48.27", "file": "osdb"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "2.73", "throughput": "49.55", "file": "osdb"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "2.73", "throughput": "41.77", "file": "osdb"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "2.73", "throughput": "50.54", "file": "osdb"},
+{"level": "6", "type": "ristretto19-bundled", "ratio": "2.73", "throughput": "51.66", "file": "osdb"}
+    ]
+  },
+  "transform": [
+    {
+      "filter": "datum.type == 'isal' ? datum.level == 6 : datum.level == 6"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "throughput",
+          "as": "throughput_mean"
+        }
+      ],
+      "groupby": ["type", "file"]
+    },
+    {
+      "lookup": "type",
+      "from": {
+        "data": {
+          "values": [
+            {"type": "ristretto19-bundled", "new-type": "ristretto19-bundled"},
+{"type": "ristretto19-cloudflare", "new-type": "ristretto19-cloudflare"}
+          ]
+        },
+        "key": "type",
+        "fields": ["new-type"]
+      }
+    },
+    {
+      "lookup": "file",
+      "from": {
+        "data": {
+          "values": [
+             
+          ]
+        },
+        "key": "file",
+        "fields": ["default_val"]
+      }
+    },
+    {
+      "calculate": "datum.throughput_mean/datum.default_val",
+      "as" : "default-val"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "file",
+      "type": "nominal",
+      "title": "",
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "center",
+        "labelAnchor": "middle",
+        "labelOrient": "bottom"
+      },
+      "sort": [
+        "dickens", "ooffice", "osdb"
+      ]
+    }
+  },
+  "spec": {
+    "encoding": {
+      "y": {
+        "field": "throughput_mean",
+        "type": "quantitative",
+        "axis": {
+          "title": "Throughput (kb/ms)",
+          "grid": true
+        }
+      },
+      "x": {
+        "field": "new-type",
+        "type": "nominal",
+        "axis": {
+          "labels": false,
+          "ticks":false,
+          "domainWidth": 0,
+          "title": ""
+        },
+        "sort" : [
+          "zlib", "cloudflare", "jtkukunas", "ng", "chromium", "ipp", "isal"
+        ]
+      }
+    },
+    "layer": [{
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "new-type",
+          "type": "nominal",
+          "legend": {
+            "title" : "",
+            "offset" : null,
+            "zindex": 1
+          },
+          "sort" : [
+            "zlib", "cloudflare", "jtkukunas", "ng", "chromium", "ipp", "isal"
+          ]
+        }
+      }
+    }, {
+      "mark": {
+        "type": "text",
+        "dx": 5,
+        "angle": 270,
+        "baseline": "middle",
+        "align": "left"  
+      },
+      "encoding": {
+        "text": {
+          "field": "default-val",
+          "type": "nominal",
+          "format": ".0%"
+        }
+      }
+    }]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  }
+}
