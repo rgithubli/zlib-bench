@@ -163,7 +163,12 @@
       "from": {
         "data": {
           "values": [
-             
+             {"file": "sao", "default_val": "92.218"},
+{"file": "reymont", "default_val": "54.970000000000006"},
+{"file": "x.ray", "default_val": "75.58200000000001"},
+{"file": "xml", "default_val": "42.898"},
+{"file": "webster", "default_val": "53.102"},
+{"file": "samba", "default_val": "58.164"}
           ]
         },
         "key": "file",

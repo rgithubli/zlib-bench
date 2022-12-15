@@ -163,7 +163,12 @@
       "from": {
         "data": {
           "values": [
-             
+             {"file": "ooffice", "default_val": "62.934000000000005"},
+{"file": "nci", "default_val": "34.11"},
+{"file": "mr", "default_val": "61.702"},
+{"file": "osdb", "default_val": "65.862"},
+{"file": "mozilla", "default_val": "63.21999999999999"},
+{"file": "dickens", "default_val": "60.976"}
           ]
         },
         "key": "file",
