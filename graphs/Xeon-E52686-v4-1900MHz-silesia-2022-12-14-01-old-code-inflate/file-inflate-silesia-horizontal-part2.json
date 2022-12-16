@@ -163,12 +163,12 @@
       "from": {
         "data": {
           "values": [
-             {"file": "sao", "default_val": "91.69000000000001"},
-{"file": "reymont", "default_val": "54.681999999999995"},
-{"file": "x.ray", "default_val": "75.46"},
-{"file": "xml", "default_val": "42.794"},
-{"file": "webster", "default_val": "53.624"},
-{"file": "samba", "default_val": "57.998000000000005"}
+             {"file": "sao", "default_val": "97.88"},
+{"file": "reymont", "default_val": "56.410000000000004"},
+{"file": "x.ray", "default_val": "81.806"},
+{"file": "xml", "default_val": "44.05"},
+{"file": "webster", "default_val": "55.536"},
+{"file": "samba", "default_val": "60.88199999999999"}
           ]
         },
         "key": "file",

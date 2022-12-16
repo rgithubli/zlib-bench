@@ -67,11 +67,6 @@
 {"level": "6", "type": "ristretto19-system", "ratio": "2.71", "throughput": "61.36", "file": "mr"},
 {"level": "6", "type": "ristretto19-system", "ratio": "2.71", "throughput": "60.70", "file": "mr"},
 {"level": "6", "type": "ristretto19-system", "ratio": "2.71", "throughput": "61.33", "file": "mr"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "10.48", "throughput": "58.08", "file": "nci"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "10.48", "throughput": "58.24", "file": "nci"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "10.48", "throughput": "58.04", "file": "nci"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "10.48", "throughput": "58.11", "file": "nci"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "10.48", "throughput": "58.18", "file": "nci"},
 {"level": "6", "type": "ristretto19-chromium", "ratio": "10.48", "throughput": "57.61", "file": "nci"},
 {"level": "6", "type": "ristretto19-chromium", "ratio": "10.48", "throughput": "57.38", "file": "nci"},
 {"level": "6", "type": "ristretto19-chromium", "ratio": "10.48", "throughput": "57.57", "file": "nci"},
@@ -92,11 +87,6 @@
 {"level": "6", "type": "ristretto19-system", "ratio": "10.48", "throughput": "33.97", "file": "nci"},
 {"level": "6", "type": "ristretto19-system", "ratio": "10.48", "throughput": "34.01", "file": "nci"},
 {"level": "6", "type": "ristretto19-system", "ratio": "10.48", "throughput": "34.05", "file": "nci"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "1.99", "throughput": "85.31", "file": "ooffice"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "1.99", "throughput": "85.97", "file": "ooffice"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "1.99", "throughput": "84.88", "file": "ooffice"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "1.99", "throughput": "86.42", "file": "ooffice"},
-{"level": "6", "type": "ristretto19-bundled", "ratio": "1.99", "throughput": "85.68", "file": "ooffice"},
 {"level": "6", "type": "ristretto19-chromium", "ratio": "1.99", "throughput": "86.34", "file": "ooffice"},
 {"level": "6", "type": "ristretto19-chromium", "ratio": "1.99", "throughput": "86.57", "file": "ooffice"},
 {"level": "6", "type": "ristretto19-chromium", "ratio": "1.99", "throughput": "86.79", "file": "ooffice"},
@@ -161,8 +151,7 @@
             {"type": "ristretto19-chromium", "new-type": "ristretto19-chromium"},
 {"type": "ristretto19-cloudflare", "new-type": "ristretto19-cloudflare"},
 {"type": "ristretto19-madler", "new-type": "ristretto19-madler"},
-{"type": "ristretto19-system", "new-type": "ristretto19-system"},
-{"type": "ristretto19-bundled", "new-type": "ristretto19-bundled"}
+{"type": "ristretto19-system", "new-type": "ristretto19-system"}
           ]
         },
         "key": "type",
@@ -174,12 +163,12 @@
       "from": {
         "data": {
           "values": [
-             {"file": "ooffice", "default_val": "62.275999999999996"},
-{"file": "nci", "default_val": "34.017999999999994"},
-{"file": "mr", "default_val": "61.472"},
-{"file": "osdb", "default_val": "64.86999999999999"},
-{"file": "mozilla", "default_val": "63.11999999999999"},
-{"file": "dickens", "default_val": "60.446000000000005"}
+             {"file": "ooffice", "default_val": "66.03999999999999"},
+{"file": "nci", "default_val": "35.084"},
+{"file": "mr", "default_val": "66.794"},
+{"file": "osdb", "default_val": "69.664"},
+{"file": "mozilla", "default_val": "66.78"},
+{"file": "dickens", "default_val": "63.968"}
           ]
         },
         "key": "file",
