@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xue
+
 CPU=${CPU:-"i7-8650U / 1900MHz"}
 DIR=${DEFLATE_DIR:-"i7-8650U-1900MHz-deflate-silesia-openjdk-2020-07-17"}
 
