@@ -191,7 +191,7 @@
 {"level": "9", "type": "ristretto19-system", "ratio": "1.99", "throughput": "8.24", "file": "ooffice"}
       ]
     },
-    "title": "Deflater throughput/ratio per level for 'silesia/ooffice' on Xeon E5-2686 v4 / 1900MHz",
+    "title": "[Latest Zlib] Deflater throughput/ratio per level for 'silesia/ooffice' on Xeon E5-2686 v4 / 1900MHz",
     "transform": [{
       "aggregate": [{
         "op": "mean",

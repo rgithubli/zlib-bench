@@ -191,7 +191,7 @@
 {"level": "9", "type": "ristretto19-system", "ratio": "8.11", "throughput": "20.00", "file": "xml"}
       ]
     },
-    "title": "Deflater throughput/ratio per level for 'silesia/xml' on Xeon E5-2686 v4 / 1900MHz",
+    "title": "[Existing 2020 Zlib] Deflater throughput/ratio per level for 'silesia/xml' on Xeon E5-2686 v4 / 1900MHz",
     "transform": [{
       "aggregate": [{
         "op": "mean",

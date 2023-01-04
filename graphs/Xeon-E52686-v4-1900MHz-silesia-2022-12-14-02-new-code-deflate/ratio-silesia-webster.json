@@ -191,7 +191,7 @@
 {"level": "9", "type": "ristretto19-system", "ratio": "3.43", "throughput": "11.69", "file": "webster"}
       ]
     },
-    "title": "Deflater throughput/ratio per level for 'silesia/webster' on Xeon E5-2686 v4 / 1900MHz",
+    "title": "[Latest Zlib] Deflater throughput/ratio per level for 'silesia/webster' on Xeon E5-2686 v4 / 1900MHz",
     "transform": [{
       "aggregate": [{
         "op": "mean",

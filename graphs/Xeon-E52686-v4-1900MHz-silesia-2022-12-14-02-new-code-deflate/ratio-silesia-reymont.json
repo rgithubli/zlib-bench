@@ -191,7 +191,7 @@
 {"level": "9", "type": "ristretto19-system", "ratio": "3.63", "throughput": "4.14", "file": "reymont"}
       ]
     },
-    "title": "Deflater throughput/ratio per level for 'silesia/reymont' on Xeon E5-2686 v4 / 1900MHz",
+    "title": "[Latest Zlib] Deflater throughput/ratio per level for 'silesia/reymont' on Xeon E5-2686 v4 / 1900MHz",
     "transform": [{
       "aggregate": [{
         "op": "mean",
