@@ -183,6 +183,8 @@ public class ZBench {
         inf_in.close();
         inf_out.close();
 
+        System.err.printf("Finished warmup.\n");
+
         while (comp_level_start <= comp_level_end) {
             if (comp_level_start == -1) {
               // Same as 6 so skip
