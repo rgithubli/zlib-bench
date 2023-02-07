@@ -130,32 +130,45 @@ cset set --list
 
 ######### 
 
-# define below:
-export DATE="2023-01-03"
-export ID="01"
+export x64_1_CPU="Xeon E5-2686 v4 / 1900MHz"
+export x64_2_CPU="Xeon Platinum 8175M / 2500MHz"
+export ARM_CPU="Neoverse-N1"
 
+export X64_1_JAVA_PATH="/workplace/ruiamzn/OpenJDKSrc/src/OpenJDKSrc/build/private/gradle/editable-source/jdk/bin/java"
+export X64_2_JAVA_PATH="/workplace/ruiamzn/ristretto/ristretto17/src/OpenJDK17Build/build/private/gradle/editable-source/jdk/bin/java"
+export ARM_JAVA_PATH="/workplace/ruiamzn/OpenJDKSrc/build/OpenJDKSrc/OpenJDKSrc-1.0/AL2_aarch64/DEV.STD.PTHREAD/build/private/gradle/editable-source/jdk/bin/java"
+
+# define below (for both deflate and inflate):
+export DATE="2023-02-06"
+export ID="01"
+export NEW_OR_OLD="new-code"
+export jdk_version=17
 export WK_DIR=/workplace/ruiamzn/zlib/zlib-bench
-export CPU="Xeon E5-2686 v4 / 1900MHz"
-export DIR_PREFIX="Xeon-E52686-v4-1900MHz-silesia-${DATE}-${ID}"
-export JAVA_BIN_PATH=/workplace/ruiamzn/OpenJDKSrc/build/OpenJDKSrc/OpenJDKSrc-1.0/AL2_x86_64/DEV.STD.PTHREAD/build/private/gradle/editable-source/images/jdk/bin/java
+export CPU=${x64_2_CPU}
+
+# no change needed for below but need to copy paste
+export DIR_PREFIX="${CPU}-silesia-${DATE}-${ID}-${NEW_OR_OLD}"
+export JAVA_BIN_PATH=${X64_2_JAVA_PATH}
+export ristretto_version="ristretto${jdk_version}"
 # original java: /workplace/ruiamzn/origin-ristretto-tip/src/OpenJDKSrc/build/jdk-19/bin
 # with latest code: /workplace/ruiamzn/OpenJDKSrc/build/OpenJDKSrc/OpenJDKSrc-1.0/AL2_x86_64/DEV.STD.PTHREAD/build/private/gradle/editable-source/images/jdk/bin/java
 
-export DEFLATE_DIR=Xeon-E52686-v4-1900MHz-silesia-${DATE}-${ID}-new-code-deflate
+##### deflate
+export DEFLATE_DIR=${CPU}-silesia-${DATE}-${ID}-${NEW_OR_OLD}-deflate
 
 # Update
 # ristretto19-2022-12-14-01: original
 # ristretto19-2022-12-14-02: have latest code
 # ristretto19-2022-12-14-01-deflate
 # export ORIGINAL_OUTPUT_DIR=ristretto19-2022-12-14-latest-code-02
-export ORIGINAL_OUTPUT_DIR=ristretto19-${DATE}-${ID}-deflate
+export ORIGINAL_OUTPUT_DIR=ristretto${jdk_version}-${DATE}-${ID}-deflate
 export DEFLATE_DIR=${DIR_PREFIX}-deflate
 export RESULT_TMP_DIR=/tmp/$ORIGINAL_OUTPUT_DIR
 
 # deflate
 cd $WK_DIR
 
-nohup sudo cset shield --user=ruiamzn --group=amazon --exec bash -- -c "./benchmarks/bash/run-java-deflate.sh -o /tmp/$ORIGINAL_OUTPUT_DIR-deflate -j ${JAVA_BIN_PATH} -n ristretto19 ./data/silesia/*[^b] ./data/silesia/osdb" &
+nohup sudo cset shield --user=ruiamzn --group=amazon --exec bash -- -c "./benchmarks/bash/run-java-deflate.sh -o /tmp/$ORIGINAL_OUTPUT_DIR-deflate -j ${JAVA_BIN_PATH} -n ${ristretto_version} ./data/silesia/*[^b] ./data/silesia/osdb" &
 
 # Check. Expect user has >0 tasks. 
 cset set --list 
@@ -213,23 +226,11 @@ popd
 
 ################# Inflate
 
-# define below
-export DATE="2023-01-05"
-export ID="01"
-export NEW_OR_OLD="new-code"
-export X64_CPU="Xeon-E52686-v4-1900MHz"
-export ARM_CPU="Neoverse-N1"
-export X64_JAVA_PATH="/workplace/ruiamzn/OpenJDKSrc/src/OpenJDKSrc/build/private/gradle/editable-source/jdk/bin/java"
-export ARM_JAVA_PATH="/workplace/ruiamzn/OpenJDKSrc/build/OpenJDKSrc/OpenJDKSrc-1.0/AL2_aarch64/DEV.STD.PTHREAD/build/private/gradle/editable-source/jdk/bin/java"
+# Define needed generic variables listed above deflate 
 
-export CPU=${X64_CPU}
-export JAVA_BIN_PATH=${X64_JAVA_PATH}
 
 # no change needed for below
-export WK_DIR=/workplace/ruiamzn/zlib/zlib-bench
-export DIR_PREFIX="${CPU}-silesia-${DATE}-${ID}-${NEW_OR_OLD}"
-
-export ORIGINAL_OUTPUT_DIR=ristretto19-${DATE}-${ID}-${NEW_OR_OLD}-inflate
+export ORIGINAL_OUTPUT_DIR=${ristretto_version}-${DATE}-${ID}-${NEW_OR_OLD}-inflate
 export RESULT_TMP_DIR=/tmp/$ORIGINAL_OUTPUT_DIR
 
 export INFLATE_ORIGINAL_OUTPUT_DIR=${ORIGINAL_OUTPUT_DIR}
@@ -238,26 +239,28 @@ export RESULT_TMP_DIR=/tmp/$ORIGINAL_OUTPUT_DIR
 export INFLATE_RESULT_TMP_DIR=/tmp/${ORIGINAL_OUTPUT_DIR}
 
 # echo to verify
-echo ${DATE}
-echo ${ID}
-echo ${NEW_OR_OLD}
-echo ${CPU}
-echo ${JAVA_BIN_PATH}
-echo ${WK_DIR}
-echo ${DIR_PREFIX}
-echo ${ORIGINAL_OUTPUT_DIR}
-echo ${RESULT_TMP_DIR}
-echo ${INFLATE_ORIGINAL_OUTPUT_DIR}
-echo ${INFLATE_DIR}
-echo ${RESULT_TMP_DIR}
-echo ${INFLATE_RESULT_TMP_DIR}
+echo "DATE: ${DATE}"
+echo "ID: ${ID}"
+echo "NEW_OR_OLD: ${NEW_OR_OLD}"
+echo "CPU: ${CPU}"
+echo "JAVA_BIN_PATH: ${JAVA_BIN_PATH}"
+echo "WK_DIR: ${WK_DIR}"
+echo "DIR_PREFIX: ${DIR_PREFIX}"
+echo "ORIGINAL_OUTPUT_DIR: ${ORIGINAL_OUTPUT_DIR}"
+echo "RESULT_TMP_DIR: ${RESULT_TMP_DIR}"
+echo "INFLATE_ORIGINAL_OUTPUT_DIR: ${INFLATE_ORIGINAL_OUTPUT_DIR}"
+echo "INFLATE_DIR: ${INFLATE_DIR}"
+echo "RESULT_TMP_DIR: ${RESULT_TMP_DIR}"
+echo "INFLATE_RESULT_TMP_DIR: ${INFLATE_RESULT_TMP_DIR}"
 
 # inflate
 cd ${WK_DIR}
-nohup sudo cset shield --user=ruiamzn --group=amazon --exec bash -- -c "./benchmarks/bash/run-java-inflate.sh -o /tmp/$ORIGINAL_OUTPUT_DIR -j ${JAVA_BIN_PATH} -n ristretto19 ./data/silesia/*[^b] ./data/silesia/osdb" &
+nohup sudo cset shield --user=ruiamzn --group=amazon --exec bash -- -c "./benchmarks/bash/run-java-inflate.sh -o /tmp/$ORIGINAL_OUTPUT_DIR -j ${JAVA_BIN_PATH} -n ${ristretto_version} ./data/silesia/*[^b] ./data/silesia/osdb" &
+
+
 
 # x-ray only:
-sudo cset shield --user=ruiamzn --group=amazon --exec bash -- -c "./benchmarks/bash/run-java-inflate-single-impl.sh -o /tmp/$ORIGINAL_OUTPUT_DIR -j ${JAVA_BIN_PATH} -n ristretto19 ./data/silesia/x-ray"
+sudo cset shield --user=ruiamzn --group=amazon --exec bash -- -c "./benchmarks/bash/run-java-inflate-single-impl.sh -o /tmp/$ORIGINAL_OUTPUT_DIR -j ${JAVA_BIN_PATH} -n ${ristretto_version} ./data/silesia/x-ray"
 
 # get jps id
 jps 
@@ -266,7 +269,7 @@ jps
 ./profiler.sh -d 30 -f /tmp/x64-2.html jps_id
 
 # for arm:
-nohup bash ./benchmarks/bash/run-java-inflate.sh -o /tmp/$ORIGINAL_OUTPUT_DIR -j ${JAVA_BIN_PATH} -n ristretto19 ./data/silesia/*[^b] ./data/silesia/osdb &
+nohup bash ./benchmarks/bash/run-java-inflate.sh -o /tmp/$ORIGINAL_OUTPUT_DIR -j ${JAVA_BIN_PATH} -n ${ristretto_version} ./data/silesia/*[^b] ./data/silesia/osdb &
 
 
 
