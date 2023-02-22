@@ -1,0 +1,344 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "title": {
+    "text" : "Inflater throughput for Silesia corpus on Xeon_Platinum_8175M_2500MHz",
+    "anchor": "middle",
+    "offset": 20
+  },
+  "data": {
+    "values" : [
+        {"level": "6", "type": "ristretto11-chromium", "ratio": "2.63", "throughput": "100.82", "file": "dickens"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.63", "throughput": "99.50", "file": "dickens"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.63", "throughput": "100.10", "file": "dickens"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.63", "throughput": "100.41", "file": "dickens"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.63", "throughput": "101.55", "file": "dickens"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.68", "throughput": "96.76", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.68", "throughput": "96.34", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.68", "throughput": "96.84", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.68", "throughput": "96.76", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.68", "throughput": "96.76", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.71", "throughput": "94.11", "file": "mr"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.71", "throughput": "94.11", "file": "mr"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.71", "throughput": "94.03", "file": "mr"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.71", "throughput": "95.00", "file": "mr"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "2.71", "throughput": "95.45", "file": "mr"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "10.48", "throughput": "64.48", "file": "nci"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "10.48", "throughput": "64.15", "file": "nci"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "10.48", "throughput": "63.86", "file": "nci"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "10.48", "throughput": "64.44", "file": "nci"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "10.48", "throughput": "64.56", "file": "nci"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.99", "throughput": "87.33", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.99", "throughput": "87.71", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.99", "throughput": "87.79", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.99", "throughput": "87.79", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.99", "throughput": "87.17", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.56", "throughput": "87.70", "file": "reymont"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.56", "throughput": "87.46", "file": "reymont"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.56", "throughput": "87.38", "file": "reymont"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.56", "throughput": "87.46", "file": "reymont"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.56", "throughput": "87.85", "file": "reymont"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.96", "throughput": "99.07", "file": "samba"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.96", "throughput": "98.97", "file": "samba"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.96", "throughput": "99.17", "file": "samba"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.96", "throughput": "99.17", "file": "samba"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.96", "throughput": "97.63", "file": "samba"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.36", "throughput": "127.65", "file": "sao"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.36", "throughput": "130.69", "file": "sao"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.36", "throughput": "133.33", "file": "sao"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.36", "throughput": "133.33", "file": "sao"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "1.36", "throughput": "132.97", "file": "sao"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.39", "throughput": "86.02", "file": "webster"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.39", "throughput": "85.95", "file": "webster"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.39", "throughput": "85.88", "file": "webster"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.39", "throughput": "85.95", "file": "webster"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "3.39", "throughput": "85.95", "file": "webster"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "7.77", "throughput": "76.94", "file": "xml"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "7.77", "throughput": "77.06", "file": "xml"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "7.77", "throughput": "76.63", "file": "xml"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "7.77", "throughput": "76.63", "file": "xml"},
+{"level": "6", "type": "ristretto11-chromium", "ratio": "7.77", "throughput": "76.40", "file": "xml"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.63", "throughput": "65.75", "file": "dickens"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.63", "throughput": "65.62", "file": "dickens"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.63", "throughput": "65.80", "file": "dickens"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.63", "throughput": "65.75", "file": "dickens"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.63", "throughput": "64.97", "file": "dickens"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.68", "throughput": "72.96", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.68", "throughput": "73.01", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.68", "throughput": "72.91", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.68", "throughput": "73.01", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.68", "throughput": "73.01", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.71", "throughput": "70.83", "file": "mr"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.71", "throughput": "70.83", "file": "mr"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.71", "throughput": "70.78", "file": "mr"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.71", "throughput": "70.78", "file": "mr"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "2.71", "throughput": "70.83", "file": "mr"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "10.48", "throughput": "40.44", "file": "nci"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "10.48", "throughput": "40.46", "file": "nci"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "10.48", "throughput": "40.46", "file": "nci"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "10.48", "throughput": "40.32", "file": "nci"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "10.48", "throughput": "40.49", "file": "nci"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.99", "throughput": "67.03", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.99", "throughput": "68.51", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.99", "throughput": "68.41", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.99", "throughput": "68.46", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.99", "throughput": "68.55", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.56", "throughput": "58.66", "file": "reymont"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.56", "throughput": "58.90", "file": "reymont"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.56", "throughput": "58.87", "file": "reymont"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.56", "throughput": "58.80", "file": "reymont"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.56", "throughput": "58.66", "file": "reymont"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.96", "throughput": "67.16", "file": "samba"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.96", "throughput": "67.12", "file": "samba"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.96", "throughput": "67.16", "file": "samba"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.96", "throughput": "67.16", "file": "samba"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.96", "throughput": "67.03", "file": "samba"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.36", "throughput": "108.24", "file": "sao"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.36", "throughput": "108.24", "file": "sao"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.36", "throughput": "108.36", "file": "sao"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.36", "throughput": "108.36", "file": "sao"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "1.36", "throughput": "108.12", "file": "sao"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.39", "throughput": "58.69", "file": "webster"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.39", "throughput": "58.72", "file": "webster"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.39", "throughput": "58.66", "file": "webster"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.39", "throughput": "58.69", "file": "webster"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "3.39", "throughput": "58.69", "file": "webster"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "7.77", "throughput": "47.55", "file": "xml"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "7.77", "throughput": "47.73", "file": "xml"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "7.77", "throughput": "47.55", "file": "xml"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "7.77", "throughput": "47.53", "file": "xml"},
+{"level": "6", "type": "ristretto11-cloudflare", "ratio": "7.77", "throughput": "47.55", "file": "xml"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.63", "throughput": "66.33", "file": "dickens"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.63", "throughput": "65.97", "file": "dickens"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.63", "throughput": "66.38", "file": "dickens"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.63", "throughput": "66.29", "file": "dickens"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.63", "throughput": "66.33", "file": "dickens"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.68", "throughput": "74.47", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.68", "throughput": "74.52", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.68", "throughput": "74.52", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.68", "throughput": "74.42", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.68", "throughput": "74.47", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.71", "throughput": "72.94", "file": "mr"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.71", "throughput": "72.94", "file": "mr"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.71", "throughput": "72.99", "file": "mr"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.71", "throughput": "72.99", "file": "mr"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "2.71", "throughput": "72.99", "file": "mr"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "10.48", "throughput": "41.19", "file": "nci"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "10.48", "throughput": "41.19", "file": "nci"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "10.48", "throughput": "41.21", "file": "nci"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "10.48", "throughput": "41.21", "file": "nci"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "10.48", "throughput": "41.22", "file": "nci"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.99", "throughput": "69.95", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.99", "throughput": "69.90", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.99", "throughput": "69.95", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.99", "throughput": "69.95", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.99", "throughput": "69.90", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.56", "throughput": "59.33", "file": "reymont"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.56", "throughput": "59.33", "file": "reymont"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.56", "throughput": "59.33", "file": "reymont"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.56", "throughput": "58.69", "file": "reymont"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.56", "throughput": "59.33", "file": "reymont"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.96", "throughput": "68.39", "file": "samba"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.96", "throughput": "68.39", "file": "samba"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.96", "throughput": "67.88", "file": "samba"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.96", "throughput": "67.70", "file": "samba"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.96", "throughput": "68.44", "file": "samba"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.36", "throughput": "111.03", "file": "sao"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.36", "throughput": "111.03", "file": "sao"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.36", "throughput": "111.03", "file": "sao"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.36", "throughput": "111.03", "file": "sao"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "1.36", "throughput": "110.66", "file": "sao"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.39", "throughput": "59.54", "file": "webster"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.39", "throughput": "59.54", "file": "webster"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.39", "throughput": "59.57", "file": "webster"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.39", "throughput": "59.57", "file": "webster"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "3.39", "throughput": "59.57", "file": "webster"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "7.77", "throughput": "48.54", "file": "xml"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "7.77", "throughput": "48.75", "file": "xml"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "7.77", "throughput": "48.16", "file": "xml"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "7.77", "throughput": "48.37", "file": "xml"},
+{"level": "6", "type": "ristretto11-madler", "ratio": "7.77", "throughput": "48.66", "file": "xml"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.63", "throughput": "69.28", "file": "dickens"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.63", "throughput": "69.28", "file": "dickens"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.63", "throughput": "69.28", "file": "dickens"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.63", "throughput": "69.28", "file": "dickens"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.63", "throughput": "69.28", "file": "dickens"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.68", "throughput": "74.82", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.68", "throughput": "75.02", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.68", "throughput": "75.02", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.68", "throughput": "75.07", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.68", "throughput": "75.02", "file": "mozilla"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.71", "throughput": "71.54", "file": "mr"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.71", "throughput": "70.04", "file": "mr"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.71", "throughput": "70.68", "file": "mr"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.71", "throughput": "71.69", "file": "mr"},
+{"level": "6", "type": "ristretto11-system", "ratio": "2.71", "throughput": "71.69", "file": "mr"},
+{"level": "6", "type": "ristretto11-system", "ratio": "10.48", "throughput": "42.20", "file": "nci"},
+{"level": "6", "type": "ristretto11-system", "ratio": "10.48", "throughput": "42.21", "file": "nci"},
+{"level": "6", "type": "ristretto11-system", "ratio": "10.48", "throughput": "42.18", "file": "nci"},
+{"level": "6", "type": "ristretto11-system", "ratio": "10.48", "throughput": "42.21", "file": "nci"},
+{"level": "6", "type": "ristretto11-system", "ratio": "10.48", "throughput": "42.20", "file": "nci"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.99", "throughput": "71.35", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.99", "throughput": "71.30", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.99", "throughput": "71.35", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.99", "throughput": "71.40", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.99", "throughput": "71.40", "file": "ooffice"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.56", "throughput": "62.19", "file": "reymont"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.56", "throughput": "62.23", "file": "reymont"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.56", "throughput": "62.15", "file": "reymont"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.56", "throughput": "62.23", "file": "reymont"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.56", "throughput": "62.19", "file": "reymont"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.96", "throughput": "69.42", "file": "samba"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.96", "throughput": "69.42", "file": "samba"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.96", "throughput": "69.38", "file": "samba"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.96", "throughput": "69.47", "file": "samba"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.96", "throughput": "69.47", "file": "samba"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.36", "throughput": "104.58", "file": "sao"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.36", "throughput": "104.69", "file": "sao"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.36", "throughput": "104.58", "file": "sao"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.36", "throughput": "104.69", "file": "sao"},
+{"level": "6", "type": "ristretto11-system", "ratio": "1.36", "throughput": "104.69", "file": "sao"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.39", "throughput": "62.63", "file": "webster"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.39", "throughput": "61.98", "file": "webster"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.39", "throughput": "62.20", "file": "webster"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.39", "throughput": "61.87", "file": "webster"},
+{"level": "6", "type": "ristretto11-system", "ratio": "3.39", "throughput": "62.67", "file": "webster"},
+{"level": "6", "type": "ristretto11-system", "ratio": "7.77", "throughput": "50.38", "file": "xml"},
+{"level": "6", "type": "ristretto11-system", "ratio": "7.77", "throughput": "50.51", "file": "xml"},
+{"level": "6", "type": "ristretto11-system", "ratio": "7.77", "throughput": "50.00", "file": "xml"},
+{"level": "6", "type": "ristretto11-system", "ratio": "7.77", "throughput": "50.12", "file": "xml"},
+{"level": "6", "type": "ristretto11-system", "ratio": "7.77", "throughput": "50.69", "file": "xml"}
+    ]
+  },
+  "transform": [
+    {
+      "filter": "datum.type == 'isal' ? datum.level == 3 : datum.level == 6"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "throughput",
+          "as": "throughput_mean"
+        }
+      ],
+      "groupby": ["type", "file"]
+    },
+    {
+      "lookup": "type",
+      "from": {
+        "data": {
+          "values": [
+            {"type": "ristretto11-chromium", "new-type": "ristretto11-chromium"},
+{"type": "ristretto11-cloudflare", "new-type": "ristretto11-cloudflare"},
+{"type": "ristretto11-madler", "new-type": "ristretto11-madler"},
+{"type": "ristretto11-system", "new-type": "ristretto11-system"}
+          ]
+        },
+        "key": "type",
+        "fields": ["new-type"]
+      }
+    },
+    {
+      "lookup": "file",
+      "from": {
+        "data": {
+          "values": [
+             {"file": "sao", "default_val": "110.95599999999999"},
+{"file": "ooffice", "default_val": "69.93"},
+{"file": "reymont", "default_val": "59.202"},
+{"file": "nci", "default_val": "41.20399999999999"},
+{"file": "mr", "default_val": "72.97"},
+{"file": "xml", "default_val": "48.495999999999995"},
+{"file": "webster", "default_val": "59.55800000000001"},
+{"file": "mozilla", "default_val": "74.47999999999999"},
+{"file": "samba", "default_val": "68.16"},
+{"file": "dickens", "default_val": "66.26"}
+          ]
+        },
+        "key": "file",
+        "fields": ["default_val"]
+      }
+    },
+    {
+      "calculate": "datum.throughput_mean/datum.default_val",
+      "as" : "default-val"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "file",
+      "type": "nominal",
+      "title": "",
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "center",
+        "labelAnchor": "middle",
+        "labelOrient": "bottom"
+      },
+      "sort": [
+        "dickens", "mozilla", "mr", "nci", "ooffice", "reymont", "samba", "sao", "webster", "xml"
+      ]
+    }
+  },
+  "spec": {
+    "encoding": {
+      "y": {
+        "field": "throughput_mean",
+        "type": "quantitative",
+        "axis": {
+          "title": "Throughput (kb/ms)",
+          "grid": true
+        }
+      },
+      "x": {
+        "field": "new-type",
+        "type": "nominal",
+        "axis": {
+          "labels": false,
+          "ticks":false,
+          "domainWidth": 0,
+          "title": ""
+        },
+        "sort" : [
+          "ojdk / zlib-bundled", "ojdk / zlib-system", "ojdk / zlib-cloudflare", "ojdk / zlib-chromium"
+        ]
+      }
+    },
+    "layer": [{
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "new-type",
+          "type": "nominal",
+          "legend": {
+            "title" : "",
+            "offset" : null,
+            "zindex": 1
+          },
+          "sort" : [
+            "ojdk / zlib-bundled", "ojdk / zlib-system", "ojdk / zlib-cloudflare", "ojdk / zlib-chromium"
+          ]
+        }
+      }
+    }, {
+      "mark": {
+        "type": "text",
+        "dx": 5,
+        "angle": 270,
+        "baseline": "middle",
+        "align": "left"  
+      },
+      "encoding": {
+        "text": {
+          "field": "default-val",
+          "type": "nominal",
+          "format": ".0%"
+        }
+      }
+    }]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  }
+}
