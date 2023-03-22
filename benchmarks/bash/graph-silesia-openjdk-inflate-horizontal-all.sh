@@ -14,6 +14,6 @@ java \
 -json graphs/$DIR/file-inflate-silesia-horizontal-all.json \
 -svg graphs/$DIR/file-inflate-silesia-horizontal-all.svg \
 -png graphs/$DIR/file-inflate-silesia-horizontal-all.png \
--default-impl ristretto19-madler results/$DIR/ristretto*.json
+-default-impl ristretto8-bundled results/$DIR/ristretto*.json
 
 

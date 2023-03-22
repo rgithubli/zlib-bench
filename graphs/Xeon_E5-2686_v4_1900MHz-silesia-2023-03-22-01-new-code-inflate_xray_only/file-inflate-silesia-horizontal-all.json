@@ -1,0 +1,149 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "title": {
+    "text" : "Inflater throughput for Silesia corpus on Xeon_E5-2686_v4_1900MHz",
+    "anchor": "middle",
+    "offset": 20
+  },
+  "data": {
+    "values" : [
+        {"level": "6", "type": "ristretto8-bundled", "ratio": "1.40", "throughput": "79.33", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-bundled", "ratio": "1.40", "throughput": "79.02", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-bundled", "ratio": "1.40", "throughput": "77.26", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-bundled", "ratio": "1.40", "throughput": "75.63", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-bundled", "ratio": "1.40", "throughput": "74.67", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-chromium", "ratio": "1.40", "throughput": "105.20", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-chromium", "ratio": "1.40", "throughput": "105.53", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-chromium", "ratio": "1.40", "throughput": "111.26", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-chromium", "ratio": "1.40", "throughput": "110.16", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-chromium", "ratio": "1.40", "throughput": "108.26", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-cloudflare", "ratio": "1.40", "throughput": "93.10", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-cloudflare", "ratio": "1.40", "throughput": "91.32", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-cloudflare", "ratio": "1.40", "throughput": "90.41", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-cloudflare", "ratio": "1.40", "throughput": "87.19", "file": "x.ray"},
+{"level": "6", "type": "ristretto8-cloudflare", "ratio": "1.40", "throughput": "91.40", "file": "x.ray"}
+    ]
+  },
+  "transform": [
+    {
+      "filter": "datum.type == 'isal' ? datum.level == 3 : datum.level == 6"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "throughput",
+          "as": "throughput_mean"
+        }
+      ],
+      "groupby": ["type", "file"]
+    },
+    {
+      "lookup": "type",
+      "from": {
+        "data": {
+          "values": [
+            {"type": "ristretto8-bundled", "new-type": "ristretto8-bundled"},
+{"type": "ristretto8-chromium", "new-type": "ristretto8-chromium"},
+{"type": "ristretto8-cloudflare", "new-type": "ristretto8-cloudflare"}
+          ]
+        },
+        "key": "type",
+        "fields": ["new-type"]
+      }
+    },
+    {
+      "lookup": "file",
+      "from": {
+        "data": {
+          "values": [
+             {"file": "x.ray", "default_val": "77.18199999999999"}
+          ]
+        },
+        "key": "file",
+        "fields": ["default_val"]
+      }
+    },
+    {
+      "calculate": "datum.throughput_mean/datum.default_val",
+      "as" : "default-val"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "file",
+      "type": "nominal",
+      "title": "",
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "center",
+        "labelAnchor": "middle",
+        "labelOrient": "bottom"
+      },
+      "sort": [
+        "x.ray"
+      ]
+    }
+  },
+  "spec": {
+    "encoding": {
+      "y": {
+        "field": "throughput_mean",
+        "type": "quantitative",
+        "axis": {
+          "title": "Throughput (kb/ms)",
+          "grid": true
+        }
+      },
+      "x": {
+        "field": "new-type",
+        "type": "nominal",
+        "axis": {
+          "labels": false,
+          "ticks":false,
+          "domainWidth": 0,
+          "title": ""
+        },
+        "sort" : [
+          "ojdk / zlib-bundled", "ojdk / zlib-system", "ojdk / zlib-cloudflare", "ojdk / zlib-chromium"
+        ]
+      }
+    },
+    "layer": [{
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "new-type",
+          "type": "nominal",
+          "legend": {
+            "title" : "",
+            "offset" : null,
+            "zindex": 1
+          },
+          "sort" : [
+            "ojdk / zlib-bundled", "ojdk / zlib-system", "ojdk / zlib-cloudflare", "ojdk / zlib-chromium"
+          ]
+        }
+      }
+    }, {
+      "mark": {
+        "type": "text",
+        "dx": 5,
+        "angle": 270,
+        "baseline": "middle",
+        "align": "left"  
+      },
+      "encoding": {
+        "text": {
+          "field": "default-val",
+          "type": "nominal",
+          "format": ".0%"
+        }
+      }
+    }]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  }
+}

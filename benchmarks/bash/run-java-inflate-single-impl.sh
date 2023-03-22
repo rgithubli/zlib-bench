@@ -79,8 +79,8 @@ declare -A JAVA_OPTS
 
 # JAVA_OPTS["system"]="-XX:ZlibImplementation=system -XX:ZlibImplementationInflate=system -XX:ZlibImplementationDeflate=system"
 JAVA_OPTS["bundled"]=""
-# JAVA_OPTS["chromium"]="-XX:ZlibImplementation=chromium -XX:ZlibImplementationInflate=chromium -XX:ZlibImplementationDeflate=chromium"
-# JAVA_OPTS["cloudflare"]="-XX:ZlibImplementation=cloudflare -XX:ZlibImplementationInflate=cloudflare -XX:ZlibImplementationDeflate=cloudflare"
+JAVA_OPTS["chromium"]="-XX:ZlibImplementation=chromium -XX:ZlibImplementationInflate=chromium -XX:ZlibImplementationDeflate=chromium"
+JAVA_OPTS["cloudflare"]="-XX:ZlibImplementation=cloudflare -XX:ZlibImplementationInflate=cloudflare -XX:ZlibImplementationDeflate=cloudflare"
 
 for file in "${INPUT_FILES[@]}"; do
   for impl in "${!JAVA_OPTS[@]}"; do
